@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 300px 50px 300px;
+}
+
+.title{
+    text-align: center;
+    padding: 12px 0px 12px 0px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-around;
+}
+
+.video-data{
+    display: flex;
+    text-align: center;
+    justify-content: baseline;
+}
+
+i{
+    color: #ea1515b0;
+}
+
+span{
+    padding: 4px 0px 0px 5px;
+}
+
+.highlight{
+    background-color: #cfe4dd;
+    border: 2px solid #da5c5c;
+    border-radius: 5px;
+}
+
+.enroll{
+    padding: 5px 0px 20px 0px;
+    text-align: center;
+}

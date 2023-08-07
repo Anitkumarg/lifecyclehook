@@ -1,0 +1,81 @@
+<div class="header">
+  <span setBackground>This is a demo HTML content to understand custom attribute directive in Angular.</span>
+</div>
+
+<div class="header" appHover>
+  <span appHighlight>This is a demo HTML content to understand @HostListener in Angular.</span>
+</div>
+
+<div class="header">
+  <span appBetterhighlight [defaultColor]="'yellow'" [highlightColor]="'red'">This is a demo HTML content to understand @HostBinding in Angular.</span>
+</div>
+
+<div appClass [display]="{container: true , header: true}">
+  <span>This is a demo HTML content to understand @HostBinding in Angular.</span>
+</div>
+
+<div class="container">
+  <input type="text" #input>
+  <button (click)="onSubmit(input)">Submit</button>
+  <app-demo [value]="inputText" *ngIf="destroy">
+    <p #paragraph ><b>This is projected content {{inputText}}</b></p>
+  </app-demo>
+  <br>
+  <button (click)="destroyComponent()">Destroy</button>
+</div>
+
+<div class="ngStyleDiv" [appStyle]="{backgroundColor: '#cb3232' , color: 'white' , fontSize: '15px'}">
+  <p>This is a demo HTML content to understand the clone of ngStyle directive in Angular.</p>
+</div>
+
+<app-newcomponent></app-newcomponent>
+
+<div class="footer">
+  <button (click)="showNotice()">show notice</button>
+
+  <div *appIf="display">
+    <h3>This is important notice!</h3>
+    <p>This is important notice for all website users!</p>
+  </div>
+
+  <!-- <ng-template #myvar>
+    <p>This is an example paragraph.</p>
+  </ng-template> -->
+
+  <!-- <ng-template [ngIf]="display" [ngIfElse]="myvar">
+    <div>
+      <h3>This is important notice!</h3>
+      <p>This is important notice for all website users!</p>
+    </div>
+  </ng-template>
+
+  <ng-template #myvar>
+    <p>This is an example paragraph.</p>
+  </ng-template> -->
+
+  <div [ngSwitch]="occupation">
+    <p *ngSwitchCase="'teacher'">This paragraph will be displayed when occupation is teacher.</p>
+    <p *ngSwitchCase="'doctor'">This paragraph will be displayed when occupation is doctor.</p>
+    <p *ngSwitchCase="'lawyer'">This paragraph will be displayed when occupation is lawyer.</p>
+    <p *ngSwitchCase="'engineer'">This paragraph will be displayed when occupation is engineer.</p>
+    <p *ngSwitchDefault>This paragraph is default and will be displayed if no case matches switch expression.</p>
+  </div>
+</div>
+
+<div class="bottom-container">
+  <app-adduser></app-adduser>
+  <div class="user-div" *ngFor="let user of users">
+    <div class="user-name">{{user.name}}</div>
+    <div class="user-status">{{user.status}}</div>
+  </div>
+</div>
+
+<div class="user-container">
+  <div>
+    <h3>All Users</h3>
+    <app-all-users></app-all-users>
+  </div>
+  <div>
+    <app-user-details></app-user-details>
+  </div>
+</div>

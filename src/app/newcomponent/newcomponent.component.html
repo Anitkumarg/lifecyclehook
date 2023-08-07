@@ -1,0 +1,25 @@
+<div class="container">
+    <div *ngFor="let video of videos">
+        <div [appMostlikedvideo] = "video.likes === mostlikedvideo.likes">
+            <img [src]="video.thumbnails" style="width: 220px; height: 210px;">
+            <div class="title">{{video.title}}</div>
+            <div class="enroll">
+                <button (click)="courseEnroll()" mat-raised-button color="primary">Enroll</button>
+            </div>
+            <div class="bottom">
+                <div class="video-data">
+                    <i class="material-icons">thumb_up</i>
+                    <span>{{video.likes}}</span>
+                </div>
+                <div class="video-data">
+                    <i class="material-icons">thumb_down</i>
+                    <span>{{video.dislikes}}</span>
+                </div>
+                <div class="video-data">
+                    <i class="material-icons">reply_all</i>
+                    <span>{{video.share}}</span>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
